@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/auth-service1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/auth-service1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-base/build-chassis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-base/build-chassis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-base/cloud-chassis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-base/cloud-chassis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-base/service-chassis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-base/service-chassis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-cloud-infra/api-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-cloud-infra/api-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-cloud-infra/service-discovery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-cloud-infra/service-discovery/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/auth-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/auth-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/feed-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/feed-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/graph-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/graph-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/media-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/media-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/notification-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/post-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/post-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/search-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/instagram-services/search-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
