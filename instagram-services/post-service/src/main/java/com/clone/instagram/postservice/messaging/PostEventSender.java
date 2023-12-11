@@ -43,7 +43,7 @@ public class PostEventSender {
                         .setHeader(KafkaHeaders.MESSAGE_KEY, payload.getId())
                         .build();
 
-        channels.momentsPostChanged().send(message);
+        channels.sendPost().send(message);
 
         log.info("post event {} sent to topic {} for post {} and user {}",
                 message.getPayload().getEventType().name(),

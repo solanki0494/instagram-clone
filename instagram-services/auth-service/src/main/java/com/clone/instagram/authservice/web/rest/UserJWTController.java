@@ -1,8 +1,8 @@
 package com.clone.instagram.authservice.web.rest;
 
-import com.clone.instagram.authservice.security.jwt.JWTConfigurer;
-import com.clone.instagram.authservice.security.jwt.TokenProvider;
 import com.clone.instagram.authservice.web.rest.vm.LoginVM;
+import com.clone.instagram.common.security.jwt.JWTConfigurer;
+import com.clone.instagram.common.security.jwt.TokenProvider;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

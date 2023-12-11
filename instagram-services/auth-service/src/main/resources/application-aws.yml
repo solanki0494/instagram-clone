@@ -1,0 +1,70 @@
+spring:
+  application:
+    name: auth-service
+  main:
+    allow-circular-references: true
+
+  data:
+    mongodb:
+      uri: mongodb://mongodb:password@docdb-2023-10-09-08-36-06.cluster-ckzldzuccqp4.ap-south-1.docdb.amazonaws.com:27017/?tls=true&tlsCAFile=global-bundle.pem&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false
+
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          configuration:
+              key:
+                serializer: org.apache.kafka.common.serialization.StringSerializer
+      bindings:
+        momentsUserChanged:
+          destination: moments.user.changed
+          contentType: application/json
+server:
+  port: 9000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone : http://${eureka.instance.hostname}:8761/eureka/
+      
+security:
+  basic:
+    enable: false
+
+  jwt:
+    uri: /auth/**
+    header: Authorization
+    prefix: Bearer
+    expiration: 86400
+    secret: JwtSecretKey
+
+  service:
+    username: d245ef53-5ad5-4216-9c56-89fe0f8302a0
+    password: ef919ae4-b893-4969-b782-57978180ad33
+
+application:
+  cache: # Cache configuration
+    hazelcast: # Hazelcast distributed cache
+      time-to-live-seconds: 3600
+      backup-count: 1
+  registry:
+    password: admin
+  security:
+    authentication:
+      jwt:
+        # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
+        base64-secret: NmU2ZWI0NTdhYTY1MTlmMjYwNWJlZDIzNTczMDI3OTdhNmYyN2U5ZDdiYWE5ZDVhOTQyYTJkZTc1NzQxN2M4OWJhNWJmMDgwN2M5ZWZiYmNjOGYyZDA0ODYwOWJjM2Q2MGM2YjhiMjMyMmVjN2ZiZWQyMWZhNDE0MTY4MDcwN2Y=
+        # Token is valid 24 hours
+        token-validity-in-seconds: 86400
+        token-validity-in-seconds-for-remember-me: 2592000
+  logging:
+    use-json-format: false # By default, logs are not in Json format
+    logstash: # Forward logs to logstash over a socket, used by LoggingConfiguration
+      enabled: false
+      host: localhost
+      port: 5000
+      queue-size: 512

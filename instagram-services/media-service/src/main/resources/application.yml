@@ -2,6 +2,14 @@ spring:
   application:
     name: media-service
 
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://collector:4317
+
   data:
     mongodb:
       database: instaclone_media
@@ -36,12 +44,16 @@ spring:
             autoCommitOffset: false
 
 server:
-  port: 8002
+  port: 8094
 
 eureka:
+  instance:
+    hostname: service-discovery
+    prefer-ip-address: true
   client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone : http://${eureka.instance.hostname}:8761/eureka/
 
 file:
   upload-dir: /data/media/insta-clone-images/

@@ -1,13 +1,11 @@
 package com.clone.instagram.authservice.service.dto;
-import com.clone.instagram.authservice.configuration.Constants;
-import com.clone.instagram.authservice.model.User;
+import com.clone.instagram.common.configuration.Constants;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.*;
 import java.time.Instant;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * A DTO representing a user, with his authorities.

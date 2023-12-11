@@ -1,7 +1,8 @@
 package com.clone.instagram.postservice.configuration;
 
-import com.clone.instagram.postservice.security.jwt.JWTConfigurer;
-import com.clone.instagram.postservice.security.jwt.TokenProvider;
+import com.clone.instagram.common.configuration.ApplicationProperties;
+import com.clone.instagram.common.security.jwt.JWTConfigurer;
+import com.clone.instagram.common.security.jwt.TokenProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;

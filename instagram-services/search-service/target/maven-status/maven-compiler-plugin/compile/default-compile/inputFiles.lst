@@ -1,1 +1,3 @@
 /Users/mohit/Code/instagram-clone/instagram-services/search-service/src/main/java/com/clone/instagram/searchservice/SearchServiceApplication.java
+/Users/mohit/Code/instagram-clone/instagram-services/search-service/src/main/java/com/clone/instagram/searchservice/configuration/SecurityConfiguration.java
+/Users/mohit/Code/instagram-clone/instagram-services/search-service/src/main/java/com/clone/instagram/searchservice/security/UserFeignClientInterceptor.java

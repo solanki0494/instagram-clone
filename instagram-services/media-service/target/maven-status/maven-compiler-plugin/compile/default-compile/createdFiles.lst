@@ -1,1 +1,12 @@
+com/clone/instagram/mediaservice/configuration/SecurityConfiguration.class
+com/clone/instagram/mediaservice/configuration/StaticResourceConfiguration.class
+com/clone/instagram/mediaservice/service/ImageService.class
+com/clone/instagram/mediaservice/service/FileStorageService.class
+com/clone/instagram/mediaservice/web/rest/payload/UploadFileResponse.class
+com/clone/instagram/mediaservice/web/rest/exception/InvalidFileException.class
+com/clone/instagram/mediaservice/model/ImageMetadata.class
 com/clone/instagram/mediaservice/MediaServiceApplication.class
+com/clone/instagram/mediaservice/web/rest/exception/StorageException.class
+com/clone/instagram/mediaservice/web/rest/exception/InvalidFileNameException.class
+com/clone/instagram/mediaservice/web/rest/ImageUploadResource.class
+com/clone/instagram/mediaservice/repository/ImageMetadataRepository.class

@@ -2,15 +2,24 @@ spring:
   application:
     name: post-service
 
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://collector:4317
+
   data:
     mongodb:
+      uri: mongodb://mongodb:27017/instaclone_post
       database: instaclone_post
 
   cloud:
     stream:
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: kafka:9092
           configuration:
             key:
               serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -20,12 +29,16 @@ spring:
           contentType: application/json
 
 server:
-  port: 8001
+  port: 8096
 
 eureka:
+  instance:
+    hostname: service-discovery
+    prefer-ip-address: true
   client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone : http://${eureka.instance.hostname}:8761/eureka/
 
 application:
   cache: # Cache configuration

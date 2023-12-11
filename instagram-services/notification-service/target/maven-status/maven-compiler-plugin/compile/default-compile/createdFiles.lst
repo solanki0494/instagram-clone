@@ -1,1 +1,3 @@
+com/clone/instagram/notoficationservice/configuration/SecurityConfiguration.class
 com/clone/instagram/notoficationservice/NotificationServiceApplication.class
+com/clone/instagram/notoficationservice/security/UserFeignClientInterceptor.class

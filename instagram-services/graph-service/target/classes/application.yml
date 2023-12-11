@@ -2,9 +2,17 @@ spring:
   application:
     name: graph-service
 
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://collector:4317
+
   data:
     neo4j:
-      uri: bolt://localhost:7687
+      uri: bolt://neo4j:7687
       username: neo4j
       password: admin123
 
@@ -12,15 +20,10 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: kafka:9092
           configuration:
             key:
               deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        bindings:
-          momentsUserChanged:
-            consumer:
-              startOffset: latest
-              autoCommitOffset: false
       bindings:
         momentsUserChanged:
           destination: moments.user.changed
@@ -31,12 +34,16 @@ spring:
             autoCommitOffset: false
 
 server:
-  port: 8002
+  port: 8093
 
 eureka:
+  instance:
+    hostname: service-discovery
+    prefer-ip-address: true
   client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone : http://${eureka.instance.hostname}:8761/eureka/
 
 application:
   cache: # Cache configuration

@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +32,9 @@ public class UserService {
 
     public List<User> findAll() {
         log.info("retrieving all users");
+
+        List<User> users = new ArrayList<>();
+        users.stream().mapToDouble(x -> x.hashCode()).sum();
         return userRepository.findAll();
     }
 

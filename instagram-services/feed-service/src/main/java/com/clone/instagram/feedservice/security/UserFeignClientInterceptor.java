@@ -1,5 +1,6 @@
 package com.clone.instagram.feedservice.security;
 
+import com.clone.instagram.common.security.SecurityUtils;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.springframework.stereotype.Component;

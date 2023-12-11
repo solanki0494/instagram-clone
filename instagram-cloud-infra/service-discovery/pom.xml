@@ -3,8 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.clone.instagram</groupId>
-        <artifactId>instagram-clone</artifactId>
+        <artifactId>cloud-chassis</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../instagram-base/cloud-chassis/pom.xml</relativePath>
     </parent>
 
     <artifactId>service-discovery</artifactId>

@@ -17,14 +17,14 @@ import org.springframework.web.multipart.MultipartFile;
 import java.security.Principal;
 
 @Slf4j
-@RestController
+@RestController("api/images")
+@PreAuthorize("hasRole('USER')")
 public class ImageUploadResource {
 
     @Autowired
     private ImageService imageService;
 
-    @PostMapping("/images")
-    @PreAuthorize("hasRole('USER')")
+    @PostMapping
     public UploadFileResponse uploadFile(@RequestParam("image") MultipartFile file,
                                          @AuthenticationPrincipal Principal principal) {
         String filename = StringUtils.cleanPath(file.getOriginalFilename());

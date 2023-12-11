@@ -18,12 +18,13 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@RequestMapping("api/posts")
 public class PostResource {
 
     @Autowired
     private PostService postService;
 
-    @PostMapping("/posts")
+    @PostMapping
     public ResponseEntity<?> createPost(@RequestBody PostRequestVM postRequestVM){
         log.info("received a request to create a post for image {}", postRequestVM.getImageUrl());
 
@@ -38,14 +39,14 @@ public class PostResource {
                 .body(new ApiResponse(true, "Post created successfully"));
     }
 
-    @DeleteMapping("/posts/{id}")
+    @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletePost(@PathVariable("id") String id, @AuthenticationPrincipal UserDetails user) {
         log.info("received a delete request for post id {} from user {}", id, user.getUsername());
         postService.deletePost(id, user.getUsername());
     }
 
-    @GetMapping("/posts/me")
+    @GetMapping("me")
     public ResponseEntity<?> findCurrentUserPosts(@AuthenticationPrincipal(errorOnInvalidType = true) UserDetails userDetails) {
         log.info("retrieving posts for user {}", userDetails.getUsername());
 
@@ -55,7 +56,7 @@ public class PostResource {
         return ResponseEntity.ok(posts);
     }
 
-    @GetMapping("/posts/{username}")
+    @GetMapping("{username}")
     public ResponseEntity<?> findUserPosts(@PathVariable("username") String username) {
         log.info("retrieving posts for user {}", username);
 
@@ -65,7 +66,7 @@ public class PostResource {
         return ResponseEntity.ok(posts);
     }
 
-    @PostMapping("/posts/in")
+    @PostMapping("in")
     public ResponseEntity<?> findPostsByIdIn(@RequestBody List<String> ids) {
         log.info("retrieving posts for {} ids", ids.size());
 

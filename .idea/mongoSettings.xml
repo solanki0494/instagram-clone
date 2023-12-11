@@ -4,6 +4,19 @@
     <option name="serverConfigurations">
       <set>
         <ServerConfiguration>
+          <option name="label" value="Copy of insta_mongo" />
+          <option name="serverUrls">
+            <list>
+              <option value="localhost:27017" />
+            </list>
+          </option>
+          <option name="shellWorkingDir" value="null" />
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+          <option name="userDatabase" value="instaclone_auth" />
+        </ServerConfiguration>
+        <ServerConfiguration>
           <option name="label" value="insta_mongo" />
           <option name="serverUrls">
             <list>

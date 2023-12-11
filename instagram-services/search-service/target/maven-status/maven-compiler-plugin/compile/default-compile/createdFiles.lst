@@ -1,1 +1,3 @@
+com/clone/instagram/searchservice/configuration/SecurityConfiguration.class
+com/clone/instagram/searchservice/security/UserFeignClientInterceptor.class
 com/clone/instagram/searchservice/SearchServiceApplication.class

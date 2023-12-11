@@ -2,6 +2,14 @@ spring:
   application:
     name: service-discovery
 
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://collector:4317
+
 server:
   port: 8761
 
@@ -9,3 +17,9 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus

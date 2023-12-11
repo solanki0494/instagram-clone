@@ -6,13 +6,14 @@ spring:
 
   data:
     mongodb:
+      uri: mongodb://mongodb:27017/instaclone_auth
       database: instaclone_auth
 
   cloud:
     stream:
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: kafka:9092
           configuration:
               key:
                 serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -20,32 +21,35 @@ spring:
         momentsUserChanged:
           destination: moments.user.changed
           contentType: application/json
+
+  sleuth:
+    otel:
+      config:
+        trace-id-ratio-based: 1.0
+      exporter:
+        otlp:
+          endpoint: http://collector:4317
 server:
-  port: 9000
+  port: 8091
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+#  zipkin:
+#    tracing:
+#      endpoint: http://zipkin:9411/api/v2/spans
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: service-discovery
+    prefer-ip-address: true
   client:
     fetchRegistry: true
     serviceUrl:
       defaultZone : http://${eureka.instance.hostname}:8761/eureka/
       
-security:
-  basic:
-    enable: false
-
-  jwt:
-    uri: /auth/**
-    header: Authorization
-    prefix: Bearer
-    expiration: 86400
-    secret: JwtSecretKey
-
-  service:
-    username: d245ef53-5ad5-4216-9c56-89fe0f8302a0
-    password: ef919ae4-b893-4969-b782-57978180ad33
-
 application:
   cache: # Cache configuration
     hazelcast: # Hazelcast distributed cache

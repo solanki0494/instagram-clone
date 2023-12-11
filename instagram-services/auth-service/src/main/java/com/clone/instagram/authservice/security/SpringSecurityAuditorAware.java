@@ -1,6 +1,7 @@
 package com.clone.instagram.authservice.security;
 
-import com.clone.instagram.authservice.configuration.Constants;
+import com.clone.instagram.common.configuration.Constants;
+import com.clone.instagram.common.security.SecurityUtils;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;
 

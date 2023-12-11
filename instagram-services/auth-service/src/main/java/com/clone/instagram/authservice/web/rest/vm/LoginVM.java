@@ -1,6 +1,6 @@
 package com.clone.instagram.authservice.web.rest.vm;
 
-import com.clone.instagram.authservice.configuration.Constants;
+import com.clone.instagram.common.configuration.Constants;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
